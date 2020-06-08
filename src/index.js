@@ -2,13 +2,15 @@ import * as React from '../src/react/packages/react/src/React';
 import * as ReactDOM from '../src/react/packages/react-dom/src/client/ReactDOM';
 // import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Router from './router';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+    // <App />,
+  // </React.StrictMode>,
+  <Router/>,
   document.getElementById('root')
 );
 

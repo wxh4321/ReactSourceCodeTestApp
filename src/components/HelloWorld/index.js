@@ -1,10 +1,15 @@
-import * as React from '../../react/packages/react/src/React';
+import React from 'react';
+
+import {Tooltip,Card} from 'antd';
+const title = 'Hello react source code';
 
 function Hello() {
   return (
-    <p>
-        Hello react source code
-    </p>
+    <Card>
+      <Tooltip placement="top" title={title}>
+        {title}
+      </Tooltip>
+    </Card>
   );
 }
 

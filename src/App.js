@@ -2,6 +2,7 @@ import * as React from '../src/react/packages/react/src/React';
 import Hello from './components/HelloWorld';
 import logo from './logo.svg';
 import './App.css';
+import { Button, Tooltip, } from 'antd';
 
 class  App extends React.Component {
   constructor(props){
@@ -16,19 +17,23 @@ class  App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <div onClick={()=>{window.location.href='/menu'}}>
+            <img src={logo} className="App-logo" alt="logo" />
+          </div>
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
           {
             !visible?
-            <button onClick={()=>{
-              this.setState({
-                visible:true
-              })
-            }}>
-              展示
-            </button>
+            <Tooltip title={'展示'}>
+              <Button onClick={()=>{
+                this.setState({
+                  visible:true
+                })
+              }}>
+                展示
+              </Button>
+            </Tooltip>
             :
             <Hello/>
           }

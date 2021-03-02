@@ -18,6 +18,9 @@ class Menu extends Component{
                     <Item>
                         <a href='/removabletable'>removable table</a>
                     </Item>
+                    <Item>
+                        <a href='/testviewer'>test viewer</a>
+                    </Item>
                 </List>
             </div>
         )

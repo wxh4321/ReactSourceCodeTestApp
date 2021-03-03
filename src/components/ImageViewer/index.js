@@ -5,7 +5,7 @@ import Viewer from 'viewerjs';
 let viewer=null;
 
 function ImageViewer(props) {
-  const {children,imgstyle} = props;
+  const {children,imgstyle={}} = props;
   const [state,setState] = useState({
     id:props.id
   });
@@ -39,23 +39,23 @@ function ImageViewer(props) {
   },[state])
 
   return (
-    <ul id={id} style={imgstyle||{display:'flex'}}>
+    <div id={id} style={{display:'flex',...imgstyle}}>
         {
             children&&children.length?
             children.map((e)=>{
                 return (
-                    <li onClick={clickImage}>
+                    <div onClick={clickImage}>
                         {e}
-                    </li>
+                    </div>
                 )
             })
             :
-            <li onClick={clickImage}>
+            <div onClick={clickImage}>
                 {children}
-            </li>
+            </div>
         }
         
-    </ul>
+    </div>
   );
 }
 
